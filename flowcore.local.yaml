@@ -1,0 +1,14 @@
+tenant: argilzar # <-- replace
+development:
+    proxyEndpoints:
+        todo-app:
+            dataCore: todo-app
+            flowType: todo-items
+            events:
+                - todo-item.created.v0
+                - todo-item.renamed.v0
+                - todo-item.completed.v0
+                - todo-item.reopened.v0
+                - todo-item.deleted.v0
+            endpoints:
+                - "" # leave this empty. POST /api/transformer/ is the default endpoint.

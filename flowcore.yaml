@@ -1,0 +1,18 @@
+# cli "flowcore data-core apply -f flowcore.yaml"
+version: 1
+tenant: argilzar # <-- replace
+dataCore:
+    name: todo-app
+    flowTypes:
+        todo-items:
+            eventTypes:
+                todo-item.created.v0:
+                    description: "A todo item was created (full snapshot)"
+                todo-item.renamed.v0:
+                    description: "The title of a todo item was changed"
+                todo-item.completed.v0:
+                    description: "A todo item was marked as done"
+                todo-item.reopened.v0:
+                    description: "A completed todo item was reopened"
+                todo-item.deleted.v0:
+                    description: "A todo item was deleted"
