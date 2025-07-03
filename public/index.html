@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List - Flowcore Demo</title>
+    <link rel="stylesheet" href="/public/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Todo List</h1>
+            <p class="subtitle">Flowcore Event-Driven Demo</p>
+        </header>
+
+        <main>
+            <section class="add-todo-section">
+                <h2>Add New Todo</h2>
+                <form id="addTodoForm" class="add-todo-form">
+                    <div class="form-group">
+                        <label for="todoTitle">Title*</label>
+                        <input type="text" id="todoTitle" placeholder="Enter todo title..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="todoDescription">Description</label>
+                        <textarea id="todoDescription" placeholder="Enter description (optional)..." rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="btn-icon">+</span>
+                        Add Todo
+                    </button>
+                </form>
+            </section>
+
+            <section class="todos-section">
+                <div class="todos-header">
+                    <h2>Your Todos</h2>
+                    <div class="stats">
+                        <span id="totalCount" class="stat">Total: 0</span>
+                        <span id="completedCount" class="stat">Completed: 0</span>
+                        <span id="pendingCount" class="stat">Pending: 0</span>
+                    </div>
+                </div>
+                
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="pending">Pending</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+
+                <div id="todosContainer" class="todos-container">
+                    <div class="loading">Loading todos...</div>
+                </div>
+
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    <div class="empty-icon">📋</div>
+                    <h3>No todos yet</h3>
+                    <p>Add your first todo to get started!</p>
+                </div>
+
+                <div id="connectionError" class="empty-state" style="display: none;">
+                    <div class="empty-icon">🔌</div>
+                    <h3>Backend Connection Required</h3>
+                    <p>Please ensure the backend server is running with proper environment configuration.</p>
+                    <p>See the README.md for setup instructions.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Powered by <strong>Flowcore</strong> & <strong>Bun</strong></p>
+        </footer>
+    </div>
+
+    <script src="/public/app.js"></script>
+</body>
+</html>
